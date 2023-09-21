@@ -1,7 +1,6 @@
 #include "nflowwrapper.h"
 
 #include <cmath>
-#include <string>
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -11,12 +10,12 @@
 
 class ModuleHolder {
 	public:
-		ModuleHolder(std::string name) : myModule(torch::jit::load(name)) {}
+		ModuleHolder(const char * name) : myModule(torch::jit::load(name)) {}
 		torch::jit::Module myModule;
 };
 
 
-NFlowWrapper::NFlowWrapper(std::string name, std::size_t columns) : moduleHolder(new ModuleHolder(name)), cols(columns)   {
+NFlowWrapper::NFlowWrapper(const char * name, std::size_t columns) : moduleHolder(new ModuleHolder(name)), cols(columns)   {
 	moduleHolder->myModule.eval();
 }
 

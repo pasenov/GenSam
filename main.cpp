@@ -1,12 +1,10 @@
 #include "nflowwrapper.h"
 
-#include <string>
 #include <iostream>
 #include <vector>
 #include <fstream>
 #include <sstream>
 
-#include <torch/script.h>
 
 int main()
 {

@@ -1,4 +1,3 @@
-#include <string>
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -9,7 +8,7 @@ class ModuleHolder;
 
 class NFlowWrapper {
 	public:
-		NFlowWrapper(std::string name, std::size_t columns);
+		NFlowWrapper(const char * name, std::size_t columns);
 		std::vector<std::vector<float>> generate(std::vector<float> context);
 		ModuleHolder * moduleHolder;
 		
